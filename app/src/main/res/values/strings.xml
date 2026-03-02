@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CampusCoffeeOrder</string>
+    <string name="campus_coffee">Campus Coffee</string>
+    <string name="order_name">Provide a name for your order</string>
+    <string name="size_small">Small</string>
+    <string name="size_medium">Medium</string>
+    <string name="size_large">Large</string>
+    <string name="type_espresso">Espresso</string>
+    <string name="type_macchiato">Macchiato</string>
+    <string name="type_americano">Americano</string>
+    <string name="type_latte">Latte</string>
+    <string name="type_cappuccino">Cappuccino</string>
+    <string name="order_now">Order Now</string>
+    <string name="order_details">Order Details</string>
+    <string name="size_choice">Choose a drink size:</string>
+    <string name="type_choice">Choose a drink type:</string>
+</resources>
