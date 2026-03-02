@@ -8,14 +8,19 @@
     android:layout_margin="24dp"
     tools:context=".MainActivity">
 
-    <TableRow>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/campus_coffee"
-            android:layout_span="2"
-            android:layout_gravity="center"/>
-    </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/campus_coffee"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="coffee cup image"
+        android:src="@drawable/coffee_cup"/>
 
     <TableRow>
         <TextView
@@ -25,9 +30,9 @@
 
         <EditText
             android:id="@+id/edtName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/order_name"/>
+            android:hint="@string/name_for_order"/>
     </TableRow>
 
     <TableRow>
@@ -38,7 +43,7 @@
 
         <RadioGroup
             android:id="@+id/sizeRadioGroup"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <RadioButton
@@ -69,7 +74,7 @@
 
         <RadioGroup
             android:id="@+id/typeRadioGroup"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <RadioButton
@@ -104,14 +109,11 @@
         </RadioGroup>
     </TableRow>
 
-    <TableRow>
-
-        <Button
-            android:id="@+id/btnOrder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_span="2"
-            android:text="@string/order_now" />
-    </TableRow>
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/order_now" />
 </TableLayout>
