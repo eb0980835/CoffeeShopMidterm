@@ -1,6 +1,7 @@
 package com.zybooks.campuscoffeeorder
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -34,34 +35,40 @@ class MainActivity : AppCompatActivity() {
             val selectedSize = rdgSize.checkedRadioButtonId
             val selectedType = rdgType.checkedRadioButtonId
 
-            val intent = Intent(this@MainActivity, OrderDetailsActivity::class.java)
-            intent.putExtra("name", name)
-            if (selectedSize == R.id.sizeRadioSmall) {
-                intent.putExtra("selectedSize", "Small")
-            }
-            else if (selectedSize == R.id.sizeRadioMedium) {
-                intent.putExtra("selectedSize", "Medium")
+            val checkName = name.trim()
+            if (checkName.isBlank()) {
+                Toast.makeText(edtName.context,"Please enter a name for your order",Toast.LENGTH_LONG).show()
+                edtName.setBackgroundColor(Color.parseColor("#FFCDD2"))
             }
             else {
-                intent.putExtra("selectedSize", "Large")
-            }
+                val intent = Intent(this@MainActivity, OrderDetailsActivity::class.java)
+                
+                intent.putExtra("name", name)
 
-            if (selectedType == R.id.typeRadioEspresso) {
-                intent.putExtra("selectedType", "Espresso")
+                when (selectedSize) {
+                    R.id.sizeRadioSmall -> intent.putExtra("selectedSize", "Small")
+
+                    R.id.sizeRadioMedium -> intent.putExtra("selectedSize", "Medium")
+
+                    else -> intent.putExtra("selectedSize", "Large")
+
+                }
+
+                when (selectedType) {
+                    R.id.typeRadioEspresso -> intent.putExtra("selectedType", "Espresso")
+
+                    R.id.typeRadioMacchiato -> intent.putExtra("selectedType", "Macchiato")
+
+                    R.id.typeRadioAmericano -> intent.putExtra("selectedType", "Americano")
+
+                    R.id.typeRadioLatte -> intent.putExtra("selectedType", "Latte")
+
+                    else -> intent.putExtra("selectedType", "Cappuccino")
+
+                }
+
+                startActivity(intent)
             }
-            else if (selectedType == R.id.typeRadioMacchiato) {
-                intent.putExtra("selectedType", "Macchiato")
-            }
-            else if (selectedType == R.id.typeRadioAmericano) {
-                intent.putExtra("selectedType", "Americano")
-            }
-            else if (selectedType == R.id.typeRadioLatte) {
-                intent.putExtra("selectedType", "Latte")
-            }
-            else {
-                intent.putExtra("selectedType", "Cappuccino")
-            }
-            startActivity(intent)
         }
     }
 }

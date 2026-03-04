@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Cozy Theme Colors -->
+    <color name="cozy_primary">#709EB3</color>
+    <color name="cozy_secondary">#2972CC</color>
+    <color name="cozy_bg">#E3CE9D</color>
 </resources>

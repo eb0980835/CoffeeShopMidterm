@@ -1,6 +1,7 @@
 package com.zybooks.campuscoffeeorder
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,8 @@ class OrderDetailsActivity : AppCompatActivity() {
             insets
         }
 
+        Log.d("Logging", "OrderDetails activity created")
+
         val txtName = findViewById<TextView>(R.id.txtName)
         val txtSize = findViewById<TextView>(R.id.txtSize)
         val txtType = findViewById<TextView>(R.id.txtType)
@@ -31,5 +34,30 @@ class OrderDetailsActivity : AppCompatActivity() {
         txtName.text = name
         txtSize.text = selectedSize
         txtType.text = selectedType
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Logging", "OrderDetails activity started")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Logging", "OrderDetails activity resumed")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Logging", "OrderDetails activity paused")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Logging", "OrderDetails activity stopped")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Logging", "OrderDetails activity destroyed")
     }
 }
