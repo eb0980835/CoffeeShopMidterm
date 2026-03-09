@@ -19,8 +19,10 @@ class OrderDetailsActivity : AppCompatActivity() {
             insets
         }
 
-        Log.d("Logging", "OrderDetails activity created")
+//        onCreate log for Logcat
+        Log.d("Logging", "Created - activity: OrderDetails")
 
+//        Gets views by id
         val txtName = findViewById<TextView>(R.id.txtName)
         val txtSize = findViewById<TextView>(R.id.txtSize)
         val txtType = findViewById<TextView>(R.id.txtType)
@@ -36,28 +38,29 @@ class OrderDetailsActivity : AppCompatActivity() {
         txtType.text = selectedType
     }
 
+//    Logs for life cycles
     override fun onStart() {
         super.onStart()
-        Log.d("Logging", "OrderDetails activity started")
+        Log.d("Logging", "Started - activity: OrderDetails")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("Logging", "OrderDetails activity resumed")
+        Log.d("Logging", "Resumed - activity: OrderDetails")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("Logging", "OrderDetails activity paused")
+        Log.d("Logging", "Paused - activity: OrderDetails")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("Logging", "OrderDetails activity stopped")
+        Log.d("Logging", "Stopped - activity: OrderDetails")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Logging", "OrderDetails activity destroyed")
+        Log.d("Logging", "Destroyed - activity: OrderDetails")
     }
 }

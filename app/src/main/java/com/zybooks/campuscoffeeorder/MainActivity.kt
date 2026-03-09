@@ -24,17 +24,22 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+//        Grabs each view for each input (including button)
         val btnOrder = findViewById<Button>(R.id.btnOrder)
         val edtName = findViewById<EditText>(R.id.edtName)
         val rdgSize = findViewById<RadioGroup>(R.id.sizeRadioGroup)
         val rdgType = findViewById<RadioGroup>(R.id.typeRadioGroup)
 
+//        Button click listener
         btnOrder.setOnClickListener {
             val name = edtName.text.toString()
 
+//            Finds which radio button is clicked on
             val selectedSize = rdgSize.checkedRadioButtonId
             val selectedType = rdgType.checkedRadioButtonId
 
+//            Checks to make sure name is not blank and prevents user from moving on if it is
+//            Provides feedback via toast
             val checkName = name.trim()
             if (checkName.isBlank()) {
                 Toast.makeText(edtName.context,"Please enter a name for your order",Toast.LENGTH_LONG).show()
@@ -45,15 +50,16 @@ class MainActivity : AppCompatActivity() {
                 
                 intent.putExtra("name", name)
 
+//                Sends size based on which radio button id is selected
                 when (selectedSize) {
                     R.id.sizeRadioSmall -> intent.putExtra("selectedSize", "Small")
 
                     R.id.sizeRadioMedium -> intent.putExtra("selectedSize", "Medium")
 
                     else -> intent.putExtra("selectedSize", "Large")
-
                 }
 
+//                Sends type based on which radio button id is selected
                 when (selectedType) {
                     R.id.typeRadioEspresso -> intent.putExtra("selectedType", "Espresso")
 
@@ -64,7 +70,6 @@ class MainActivity : AppCompatActivity() {
                     R.id.typeRadioLatte -> intent.putExtra("selectedType", "Latte")
 
                     else -> intent.putExtra("selectedType", "Cappuccino")
-
                 }
 
                 startActivity(intent)

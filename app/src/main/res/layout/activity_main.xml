@@ -17,6 +17,7 @@
         android:contentDescription="@string/coffee_cup_image"
         android:src="@drawable/coffee_cup"/>
 
+<!--    Name Input -->
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
@@ -31,6 +32,7 @@
             android:hint="@string/name_for_order"/>
     </TableRow>
 
+<!--    Drink Size Radio Buttons -->
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
@@ -63,6 +65,7 @@
         </RadioGroup>
     </TableRow>
 
+<!--    Drink Type Radio Buttons -->
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
@@ -107,6 +110,7 @@
         </RadioGroup>
     </TableRow>
 
+<!--    Submit/Order Button -->
     <Button
         android:id="@+id/btnOrder"
         android:layout_width="wrap_content"
